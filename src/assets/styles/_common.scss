@@ -1,0 +1,65 @@
+@import './vars.scss';
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	margin: 0;
+	font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-mdoz-osx-font-smoothing: grayscale;
+	color: $text-color;
+	line-height: 1.4;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: $text-color;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+.wrapper {
+	max-width: 1920px;
+	margin: 0 auto;
+}
+
+.container {
+	max-width: 1200px;
+	// padding: 0 1.5rem;
+	margin: 0 auto;
+}
+
+.btn {
+	padding: 1.5rem 3rem;
+
+	color: #fff;
+	border-radius: 8px;
+	font-size: 1.4rem;
+	transition: background 0.3s;
+	cursor: pointer;
+	outline: none;
+	border-color: transparent;
+	&-primary {
+		background-color: $primary-color;
+	}
+
+	&-hover {
+		&:hover {
+			background-color: rgba($color: $primary-color, $alpha: $opacity-7);
+		}
+	}
+}
