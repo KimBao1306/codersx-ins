@@ -1,0 +1,44 @@
+@import '../../assets/styles/vars.scss';
+
+.banner {
+	background: hsl(252, 56%, 98%);
+	&__inner {
+		padding: 5rem 0;
+	}
+	&__item {
+		&-left {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			height: 100%;
+		}
+	}
+
+	&__title {
+		margin-bottom: 3rem;
+
+		font-size: 3rem;
+		font-weight: 700;
+		color: $text-color;
+	}
+	&__desc {
+		margin-bottom: 5rem;
+
+		font-size: 1.6rem;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.banner {
+		&__inner {
+			flex-direction: column-reverse;
+		}
+		&__title {
+			font-size: 2.5rem;
+		}
+		&__desc {
+			font-size: 1.6rem;
+		}
+	}
+}

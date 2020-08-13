@@ -1,0 +1,14 @@
+.alert {
+	&__title,
+	&__mess,
+	&__footer {
+		font-size: 2.5rem;
+	}
+	@media screen and (max-width: 599px) {
+		&__title,
+		&__mess,
+		&__footer {
+			font-size: 1.6rem;
+		}
+	}
+}
