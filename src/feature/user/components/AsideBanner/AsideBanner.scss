@@ -1,0 +1,30 @@
+.aside-banner {
+	display: flex;
+	flex-direction: column;
+
+	height: 100vh;
+	margin-left: -1.5rem;
+
+	&__content {
+		padding: 8rem 4rem;
+		margin-bottom: 10rem;
+		& > .logo {
+			margin-bottom: 2rem;
+		}
+	}
+
+	&__title {
+		font-size: 3.2rem;
+		font-weight: 700;
+	}
+
+	&__image {
+		margin-top: auto;
+	}
+
+	@media screen and (max-width: 991px) {
+		& {
+			display: none;
+		}
+	}
+}
