@@ -1,0 +1,139 @@
+@import '../../../../assets/styles/vars.scss';
+
+.photo {
+	padding-top: 5rem;
+	&__card {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 3rem;
+	}
+
+	&-image {
+		position: relative;
+
+		margin-bottom: 1rem;
+		border-radius: 10px;
+
+		overflow: hidden;
+		&__link {
+			border-radius: inherit;
+
+			& > img {
+				height: 23rem;
+				width: 100%;
+
+				border-radius: inherit;
+				object-fit: cover;
+			}
+		}
+
+		&__overplay {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			width: 100%;
+			padding: 2rem;
+
+			opacity: 0;
+			z-index: 1;
+			transition: opacity 0.3s;
+
+			& > .photo__icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 1rem;
+
+				width: 3rem;
+				height: 3rem;
+				font-size: 1.4rem;
+				text-align: center;
+
+				background-color: #fefefe;
+				border-radius: 3px;
+			}
+		}
+
+		&__title {
+			font-size: 1.6rem;
+			font-weight: bold;
+			flex-grow: 1;
+			color: #fff;
+
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			& > a {
+				color: #fff;
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			width: 100%;
+			height: 100%;
+
+			opacity: 0;
+			z-index: 0;
+			transition: opacity 0.3s;
+			pointer-events: none;
+			background: linear-gradient(
+				to bottom,
+				transparent 0%,
+				transparent 8.1%,
+				rgba(0, 0, 0, 0.001) 15.5%,
+				rgba(0, 0, 0, 0.003) 22.5%,
+				rgba(0, 0, 0, 0.005) 29%,
+				rgba(0, 0, 0, 0.008) 35.3%,
+				rgba(0, 0, 0, 0.011) 41.2%,
+				rgba(0, 0, 0, 0.014) 47.1%,
+				rgba(0, 0, 0, 0.016) 52.9%,
+				rgba(0, 0, 0, 0.019) 58.8%,
+				rgba(0, 0, 0, 0.022) 64.7%,
+				rgba(0, 0, 0, 0.1) 71%,
+				rgba(0, 0, 0, 0.2) 77.5%,
+				rgba(0, 0, 0, 0.3) 84.5%,
+				rgba(0, 0, 0, 0.4) 91.9%,
+				rgba(0, 0, 0, 0.5) 100%
+			);
+		}
+
+		&:hover {
+			.photo-image__overplay,
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+	}
+
+	&__name {
+		margin-right: auto;
+
+		font-weight: 600;
+		font-size: 1.6rem;
+	}
+
+	&__icon {
+		font-size: 1.6rem;
+		margin-left: 1.5rem;
+		color: $text-gray;
+		&:hover {
+			cursor: pointer;
+			color: $primary-color;
+		}
+	}
+}
