@@ -1,5 +1,5 @@
 // //base css
 @import 'assets/styles/reset';
 @import 'assets/styles/bootstrap-grid';
-@import 'assets/styles/vars.scss';
+@use 'assets/styles/vars.scss';
 @import 'assets/styles/common';

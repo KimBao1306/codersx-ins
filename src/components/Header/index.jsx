@@ -90,8 +90,8 @@ export default function Header({userInfo, signOut}) {
 											{userInfo.name && (
 												<>
 													<li className="header__item header-dropdown__item">
-														<NavLink to="/" className="header__link">
-															Update Infomation
+														<NavLink to="/user/upload" className="header__link">
+															Upload Photo
 														</NavLink>
 													</li>
 													<li className="header__item header-dropdown__item">

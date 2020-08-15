@@ -15,7 +15,7 @@ export const alertAuth = {
 			showConfirmButton: false,
 			width: '600px',
 			allowOutsideClick: false,
-			timer: 2000,
+			timer: 1000,
 		});
 	},
 	fail: (title, mess) => {
