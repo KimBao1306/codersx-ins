@@ -7,11 +7,7 @@ import {NavLink} from 'react-router-dom';
 import * as Yup from 'yup';
 
 LoginForm.propTypes = {
-	onSubmit: PropTypes.func,
-};
-
-LoginForm.defaultProps = {
-	onSubmit: null,
+	onSubmit: PropTypes.func.isRequired,
 };
 
 function LoginForm({onSubmit}) {

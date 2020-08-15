@@ -29,4 +29,13 @@
 			border-color: $primary-color;
 		}
 	}
+	&-image {
+		display: block;
+		margin-top: 2rem;
+
+		max-width: 240px;
+		max-height: 240px;
+
+		border-radius: 10px;
+	}
 }

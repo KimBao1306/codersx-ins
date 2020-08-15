@@ -4,10 +4,9 @@
 
 	height: 100vh;
 	margin-left: -1.5rem;
-
+	margin-right: -1.5rem;
 	&__content {
 		padding: 8rem 4rem;
-		margin-bottom: 10rem;
 		& > .logo {
 			margin-bottom: 2rem;
 		}
@@ -19,7 +18,10 @@
 	}
 
 	&__image {
-		margin-top: auto;
+		margin: auto;
+		max-width: 100%;
+		max-height: 60%;
+		object-fit: cover;
 	}
 
 	@media screen and (max-width: 991px) {

@@ -39,30 +39,53 @@ export const getInfoAct = createAsyncThunk(
 	}
 );
 
+export const uploadPhoto = createAsyncThunk(
+	'user/upload',
+	async (params, thunkAPI) => {
+		try {
+			const formData = new FormData();
+
+			formData.append('title', params.title);
+			formData.append('desc', params.desc);
+			formData.append('img', params.img);
+
+			const uploadResult = await userApi.uploadPhoto(formData);
+
+			return uploadResult;
+		} catch (error) {
+			console.log('Error in userSlice:', error);
+		}
+	}
+);
+
 const authSlice = createSlice({
 	name: 'user',
 	initialState: {
-		current: {},
+		currentUser: {},
 	},
 	reducers: {
 		//for actions sync
 		signOut: (state) => {
 			localStorage.removeItem(STORAGE.ACCESS_TOKEN);
 			localStorage.removeItem(STORAGE.REFRESH_TOKEN);
-      localStorage.removeItem(STORAGE.EXPIRED_AT);
-      
-			state.current = {};
+			localStorage.removeItem(STORAGE.EXPIRED_AT);
+
+			state.currentUser = {};
 		},
 	},
 	extraReducers: {
 		//for actions async
+		//return action for login page
 		[signInAct.fulfilled]: (_, action) => action.payload,
+		//update state and return to page need currentUser
 		[getInfoAct.fulfilled]: (state, action) => {
-			state.current = action.payload || {};
+			state.currentUser = action.payload || {};
 		},
-		[getInfoAct.rejected]: (state, action) => {
-			state.current = {};
+		[getInfoAct.rejected]: (state) => {
+			state.currentUser = {};
 		},
+		//return action for upload page
+		[uploadPhoto.fulfilled]: (_, action) => action.payload,
 	},
 });
 

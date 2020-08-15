@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Route, useRouteMatch, Redirect} from 'react-router-dom';
 import Login from './pages/Login';
-import Upload from './pages/Upload/Upload';
+import Upload from './pages/Upload';
 
 function User(props) {
 	const routeMatch = useRouteMatch();

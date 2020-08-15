@@ -35,16 +35,18 @@ function Login() {
 	}
 
 	return (
-		<div className="login">
-			<div className="row">
-				<div className="col-lg-4">
-					<AsideBanner />
-				</div>
-				<div className="col-sm-12 col-md-12 col-lg-8 ">
-					<div className="login__inner">
-						<Logo fontWeight="600" fontSize="3.2rem" />
-						<h3 className="login__heading">Sign in to Library</h3>
-						<LoginForm onSubmit={handleSubmit} />
+		<div className="form">
+			<div className="container-fluid">
+				<div className="row">
+					<div className="col-lg-4">
+						<AsideBanner />
+					</div>
+					<div className="col-sm-12 col-md-12 col-lg-8">
+						<div className="form__inner">
+							<Logo fontWeight="600" fontSize="3.2rem" />
+							<h3 className="form__heading">Sign in to Library</h3>
+							<LoginForm onSubmit={handleSubmit} />
+						</div>
 					</div>
 				</div>
 			</div>

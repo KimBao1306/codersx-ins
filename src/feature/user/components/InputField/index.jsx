@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import {FormGroup, Label, Input, FormFeedback} from 'reactstrap';
 import {ErrorMessage} from 'formik';
 import cls from 'classnames';
 import './InputField.scss';
