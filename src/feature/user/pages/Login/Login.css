@@ -1,0 +1,47 @@
+.form__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.form__inner > .logo {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  display: none;
+}
+
+.form__heading {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 991px) {
+  .form__inner {
+    max-width: 60%;
+  }
+  .form__inner > .logo {
+    display: block;
+  }
+  .form__heading {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .form__inner {
+    max-width: 100%;
+  }
+}
+/*# sourceMappingURL=Login.css.map */

@@ -17,16 +17,16 @@ function Login() {
 		try {
 			const signInResult = await dispatch(signInAct(values));
 			const {success, mess} = unwrapResult(signInResult);
+			console.log(success);
 
 			if (!success) {
 				alertAuth.fail('Login Failed', mess);
 				return;
 			}
-
 			alertAuth.success('Login Successful', mess);
 
-			const userResult = await dispatch(getInfoAct());
-			unwrapResult(userResult);
+			// const userResult = await dispatch(getInfoAct());
+			// unwrapResult(userResult);
 
 			history.push('/');
 		} catch (error) {

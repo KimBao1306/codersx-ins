@@ -1,0 +1,51 @@
+.aside-banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  min-height: 100%;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+.aside-banner__content {
+  padding: 6rem 2rem;
+}
+
+.aside-banner__content > .logo {
+  margin-bottom: 2rem;
+}
+
+.aside-banner__title {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.aside-banner__image {
+  margin: auto;
+  max-width: 100%;
+  max-height: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 991px) {
+  .aside-banner {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .aside-banner__content > .logo {
+    margin-bottom: 1rem;
+  }
+  .aside-banner__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+}
+/*# sourceMappingURL=AsideBanner.css.map */

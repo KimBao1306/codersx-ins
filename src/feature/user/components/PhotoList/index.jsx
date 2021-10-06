@@ -17,7 +17,7 @@ PhotoCard.defaultProps = {
 };
 
 export function PhotoCard({photo}) {
-	const {src, infoUser} = photo;
+	const {src, infoUser, liked, title} = photo;
 	const name = (infoUser && infoUser.name) || 'Admin';
 
 	return (
@@ -26,7 +26,7 @@ export function PhotoCard({photo}) {
 				<a href="/" className="photo-image__link">
 					<img src={src} alt="card" />
 					<div className="photo-image__overplay">
-						<p className="photo-image__title">Lorem ipsum dolor sit amet.</p>
+						<p className="photo-image__title">{title}</p>
 						<span className="photo__icon">
 							<FontAwesomeIcon icon={faBookmark} />
 						</span>
@@ -44,7 +44,7 @@ export function PhotoCard({photo}) {
 					<FontAwesomeIcon icon={faComment} /> 5
 				</span>
 				<span className="photo__icon">
-					<FontAwesomeIcon icon={faHeart} /> 95
+					<FontAwesomeIcon icon={faHeart} /> {liked}
 				</span>
 			</div>
 		</div>

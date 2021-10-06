@@ -12,6 +12,7 @@ LoginForm.propTypes = {
 
 function LoginForm({onSubmit}) {
 	const initialValues = {
+		name: '',
 		usn: '',
 		psw: '',
 	};
@@ -39,7 +40,6 @@ function LoginForm({onSubmit}) {
 							component={InputField}
 							label="Username"
 							placeholder="Your username"
-							autocomplete="on"
 						/>
 						<FastField
 							name="psw"

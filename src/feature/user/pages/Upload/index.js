@@ -1,65 +1,31 @@
-// 		this.state = {
-// 			file: null,
-// 			url: '',
-// 			redirect: false,
-// 		};
-// 	}
-
-// 	onUpload = async (e) => {
-// 		const {file} = this.state;
-// 		const {token} = this.props;
-
-// 		const formData = new FormData();
-
-// 		formData.append('img', file);
-
-// 		const data = await axios.post(
-// 			'https://react-b28-api-instagram.glitch.me/user/upload',
-// 			formData,
-// 			{
-// 				headers: {
-// 					'content-type': 'multipart/form-data',
-// 					token,
-// 				},
-// 			}
-// 		);
-
-// 		const {success, mess} = data.data;
-
-// 		if (!success) {
-// 			alert(mess);
-// 			return;
-// 		}
-
-// 		alert(mess);
-
-// 		this.setState({file: null, url: '', redirect: true});
-// 	};
-
-// 	onGetFile = (e) => {
-// 		const file = e.target.files[0];
-
-// 		const reader = new FileReader();
-
-// 		reader.onload = () => this.setState({file, url: reader.result});
-
-// 		reader.readAsDataURL(file);
-// 	};
-import React from 'react';
-import AsideBanner from 'feature/user/components/AsideBanner';
-import Logo from 'components/Logo';
-import UploadForm from 'feature/user/containers/UploadForm';
-import userApi from 'api/userApi';
-import {useDispatch} from 'react-redux';
-import {uploadPhoto} from 'feature/user/userSlice';
 import {unwrapResult} from '@reduxjs/toolkit';
+import Logo from 'components/Logo';
+import AsideBanner from 'feature/user/components/AsideBanner';
+import UploadForm from 'feature/user/containers/UploadForm';
+import {uploadPhoto} from 'feature/user/userSlice';
+import React from 'react';
+import {useDispatch} from 'react-redux';
+import {alertAuth} from 'components/Alert';
+import {useHistory} from 'react-router-dom';
 
 function Upload() {
 	const dispatch = useDispatch();
+	const history = useHistory();
 
-	async function handeSubmit(values) {
-		const uploadRs = await dispatch(uploadPhoto(values));
-		console.log(unwrapResult(uploadRs));
+	async function handleSubmit(values) {
+		try {
+			const uploadRs = await dispatch(uploadPhoto(values));
+			const {success, mess} = unwrapResult(uploadRs);
+
+			if (success) {
+				alertAuth.success('Upload Success', mess);
+				history.push('/');
+			} else {
+				alertAuth.fail('Upload Failed', mess);
+			}
+		} catch (error) {
+			console.log('Upload Error', error);
+		}
 	}
 
 	return (
@@ -76,7 +42,7 @@ function Upload() {
 						<div className="form__inner">
 							<Logo fontWeight="600" fontSize="3.2rem" />
 							<h3 className="form__heading">Upload your photo</h3>
-							<UploadForm onSubmit={handeSubmit} />
+							<UploadForm onSubmit={handleSubmit} />
 						</div>
 					</div>
 				</div>
